@@ -5,7 +5,7 @@ import { Progress } from "../components/ui/progress";
 import { ChevronLeft, ChevronRight, Info } from "lucide-react";
 import logo from "../assets/HARTS Consulting LBG.png";
 import { QuestionRenderer } from "../components/survey";
-import { Footer } from "../components/Footer";
+
 import { surveyCategories, consultantInsights } from "../types/surveyData";
 import type { Question } from "../types/survey";
 
@@ -214,9 +214,6 @@ export default function Survey() {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }
