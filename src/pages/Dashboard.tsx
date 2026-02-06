@@ -10,7 +10,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { TrendingUp, Download, AlertCircle, CheckCircle2, AlertTriangle } from "lucide-react";
+import { TrendingUp, Download } from "lucide-react";
 import { ContactUs } from "../components/ContactUs";
 import { OnionPeel } from "../components/OnionPeel";
 import { HappinessChart } from "../components/HappinessChart";
@@ -123,7 +123,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="border-b border-gray-200">
+      <nav className="border-b border-gray-200 animate-fade-in-down">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <h1 className="text-2xl font-light tracking-wider text-[#002D72]">
@@ -158,7 +158,7 @@ export default function Dashboard() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
         {/* Header */}
-        <div className="space-y-2">
+        <div className="space-y-2 animate-fade-in-up">
           <h2 className="text-5xl font-light text-[#002D72]">
             Strategic Command Center
           </h2>
@@ -172,7 +172,7 @@ export default function Dashboard() {
           {pulseMetrics.map((metric, index) => {
             const Icon = metric.icon;
             return (
-              <Card key={index} className="p-6 space-y-4 border-2 hover:shadow-lg transition-shadow">
+              <Card key={index} className="p-6 space-y-4 border-2 hover:shadow-lg transition-shadow card-hover animate-fade-in-up animate-delay-${(index + 1) * 100}">
                 <div className="flex items-start justify-between">
                   <div className="space-y-1">
                     <p className="text-sm text-[#4A4A4A]">{metric.title}</p>
@@ -202,7 +202,7 @@ export default function Dashboard() {
         </div>
 
         {/* Radar Chart */}
-        <Card className="p-8 space-y-6">
+        <Card className="p-8 space-y-6 animate-fade-in-up animate-delay-400">
           <div className="space-y-2">
             <h3 className="text-4xl font-light text-[#002D72]">
               Category Performance Analysis
@@ -257,11 +257,11 @@ export default function Dashboard() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <Card className="p-6 flex flex-col items-center justify-center bg-white shadow-sm hover:shadow-md transition-shadow">
+            <Card className="p-6 flex flex-col items-center justify-center bg-white shadow-sm hover:shadow-md transition-shadow card-hover animate-fade-in-left">
               <h4 className="text-xl font-medium mb-4 w-full text-left text-[#002D72]">The HARTS Model</h4>
               <OnionPeel />
             </Card>
-            <div className="h-full">
+            <div className="h-full animate-fade-in-right">
               <HappinessChart />
             </div>
           </div>
@@ -291,7 +291,7 @@ export default function Dashboard() {
             {criticalGaps.map((gap, index) => (
               <div
                 key={index}
-                className="rounded-lg p-6 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-6"
+                className="rounded-lg p-6 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-6 card-hover animate-fade-in-up"
                 style={{ background: 'linear-gradient(90deg, #002D72 0%, #009b7b 100%)' }}
               >
                 <div className="flex-1 space-y-2">

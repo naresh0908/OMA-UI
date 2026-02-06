@@ -105,7 +105,7 @@ export default function Survey() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 shadow-sm">
+      <div className="bg-white border-b border-gray-200 shadow-sm animate-fade-in-down">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
@@ -141,7 +141,7 @@ export default function Survey() {
         <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Question Card */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10 space-y-8">
+            <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10 space-y-8 card-hover animate-scale-in">
               {/* Question Header */}
               <div className="space-y-4">
                 <div className="flex items-center justify-between flex-wrap gap-2">
@@ -152,13 +152,13 @@ export default function Survey() {
                     {getQuestionTypeLabel(currentQuestion.type)}
                   </span>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-light text-[#002D72] leading-relaxed">
+                <h2 className="text-2xl md:text-3xl font-light text-[#002D72] leading-relaxed animate-fade-in">
                   {currentQuestion.text}
                 </h2>
               </div>
 
               {/* Question Input */}
-              <div className="min-h-[200px]">
+              <div className="min-h-[200px] animate-fade-in-up animate-delay-200">
                 <QuestionRenderer
                   question={currentQuestion}
                   value={currentResponse}
@@ -191,7 +191,7 @@ export default function Survey() {
 
           {/* Consultant Insight Sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-2xl shadow-lg p-6 space-y-4 sticky top-8">
+            <div className="bg-white rounded-2xl shadow-lg p-6 space-y-4 sticky top-8 card-hover animate-fade-in-right animate-delay-300">
               <div className="flex items-center gap-2 text-[#008489]">
                 <Info className="w-5 h-5" />
                 <h3 className="font-medium">Consultant Insight</h3>

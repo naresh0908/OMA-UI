@@ -24,20 +24,20 @@ export default function Login() {
   return (
     <div className="flex h-screen w-full">
       {/* Left Side - Image with Logo */}
-      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden img-zoom">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <ImageWithFallback
           src="https://images.unsplash.com/photo-1718066236074-13f8cf7ae93e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmFsJTIwZ2xhc3MlMjBidWlsZGluZ3xlbnwxfHx8fDE3NzAxODcyNDZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
           alt="Modern Architecture"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center">
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center animate-fade-in">
           <img
             src={logo}
             alt="OMA Tool Logo"
-            className="h-32 w-auto mb-6 drop-shadow-lg"
+            className="h-32 w-auto mb-6 drop-shadow-lg animate-fade-in-down"
           />
-          <h1 className="text-white text-6xl font-light tracking-wider drop-shadow-md">
+          <h1 className="text-white text-6xl font-light tracking-wider drop-shadow-md animate-fade-in-up animate-delay-200">
             OMA Tool
           </h1>
         </div>
@@ -45,7 +45,7 @@ export default function Login() {
 
       {/* Right Side - Login Form */}
       <div className="flex-1 flex items-center justify-center bg-white p-8">
-        <div className="w-full max-w-md space-y-8">
+        <div className="w-full max-w-md space-y-8 animate-fade-in-up">
           {/* Mobile Logo */}
           <div className="lg:hidden text-center mb-8 flex flex-col items-center">
             <img
@@ -58,12 +58,12 @@ export default function Login() {
             </h1>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-2 animate-fade-in-up animate-delay-100">
             <h2 className="text-3xl font-light text-[#002D72]">Welcome back</h2>
             <p className="text-[#4A4A4A]">Sign in to your account to continue</p>
           </div>
 
-          <form onSubmit={handleLogin} className="space-y-6">
+          <form onSubmit={handleLogin} className="space-y-6 animate-fade-in-up animate-delay-200">
             <div className="space-y-2">
               <Label htmlFor="email" className="text-[#4A4A4A]">
                 Email
