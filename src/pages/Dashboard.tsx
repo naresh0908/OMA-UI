@@ -14,6 +14,7 @@ import { TrendingUp, Download, AlertCircle, CheckCircle2, AlertTriangle } from "
 import { ContactUs } from "../components/ContactUs";
 import { OnionPeel } from "../components/OnionPeel";
 import { HappinessChart } from "../components/HappinessChart";
+import { Footer } from "../components/Footer";
 
 const pulseMetrics = [
   {
@@ -331,6 +332,9 @@ export default function Dashboard() {
         {/* Contact Us Section */}
         <ContactUs />
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

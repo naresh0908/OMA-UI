@@ -14,6 +14,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { Footer } from "../components/Footer";
 import logo from "../assets/HARTS Consulting LBG.png";
 
 const categories = [
@@ -269,6 +270,9 @@ export default function Home() {
           </Button>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
