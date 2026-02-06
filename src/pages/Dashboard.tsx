@@ -120,12 +120,12 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50/50 p-6 md:p-8 font-['Montserrat']" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-white border-b border-gray-200">
+      <nav className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <h1 className="text-2xl tracking-wider" style={{ color: '#009b7b', fontWeight: 'bold' }}>
+            <h1 className="text-2xl font-light tracking-wider text-[#002D72]">
               OMA Tool
             </h1>
             <div className="flex gap-4">
@@ -158,10 +158,10 @@ export default function Dashboard() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
         {/* Header */}
         <div className="space-y-2">
-          <h2 className="text-4xl" style={{ color: '#009b7b', fontWeight: 'bold' }}>
+          <h2 className="text-5xl font-light text-[#002D72]">
             Strategic Command Center
           </h2>
-          <p className="text-[#4A4A4A]">
+          <p className="text-lg text-[#4A4A4A]">
             Your organizational maturity assessment results and strategic insights
           </p>
         </div>
@@ -203,10 +203,10 @@ export default function Dashboard() {
         {/* Radar Chart */}
         <Card className="p-8 space-y-6">
           <div className="space-y-2">
-            <h3 className="text-2xl" style={{ color: '#009b7b', fontWeight: 'bold' }}>
+            <h3 className="text-4xl font-light text-[#002D72]">
               Category Performance Analysis
             </h3>
-            <p className="text-[#4A4A4A]">
+            <p className="text-lg text-[#4A4A4A]">
               Your organization's maturity compared to industry benchmarks
             </p>
           </div>
@@ -247,17 +247,17 @@ export default function Dashboard() {
         {/* Organizational Health & Sentiment */}
         <div className="space-y-6">
           <div className="space-y-2">
-            <h3 className="text-2xl" style={{ color: '#009b7b', fontWeight: 'bold' }}>
+            <h3 className="text-4xl font-light text-[#002D72]">
               Organizational Health & Sentiment
             </h3>
-            <p className="text-[#4A4A4A]">
+            <p className="text-lg text-[#4A4A4A]">
               Visualizing the core layers of your organization and employee well-being
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <Card className="p-6 flex flex-col items-center justify-center bg-white shadow-sm hover:shadow-md transition-shadow">
-              <h4 className="text-lg mb-4 w-full text-left" style={{ color: '#009b7b', fontWeight: 'bold' }}>The HARTS Model</h4>
+              <h4 className="text-xl font-medium mb-4 w-full text-left text-[#002D72]">The HARTS Model</h4>
               <OnionPeel />
             </Card>
             <div className="h-full">
@@ -270,10 +270,10 @@ export default function Dashboard() {
         <div className="space-y-6">
           <div className="flex items-center justify-between">
             <div className="space-y-2">
-              <h3 className="text-2xl" style={{ color: '#009b7b', fontWeight: 'bold' }}>
+              <h3 className="text-4xl font-light text-[#002D72]">
                 Critical Gaps & Recommendations
               </h3>
-              <p className="text-[#4A4A4A]">
+              <p className="text-lg text-[#4A4A4A]">
                 Priority areas requiring strategic attention
               </p>
             </div>

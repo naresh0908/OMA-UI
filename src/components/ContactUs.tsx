@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 export function ContactUs() {
     return (
         <div className="bg-white py-20 px-8" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-            <div className="max-w-7xl mx-auto flex flex-row gap-16 items-start">
+            <div className="max-w-7xl mx-auto flex flex-row gap-32 items-start">
                 {/* Left Column: Logo Only */}
                 {/* Left Column: Logo Only */}
                 <div className="flex-shrink-0 pt-2" style={{ width: '200px' }}>
@@ -22,7 +22,7 @@ export function ContactUs() {
                 </div>
 
                 {/* Right Column: Copy & Form */}
-                <div className="flex-1 space-y-12">
+                <div className="flex-1 space-y-12 ml-24">
                     {/* Header Section (Now part of the right block) */}
                     <div className="space-y-3">
                         <p className="text-[#4a4a4a] text-2xl font-light tracking-wide">Change starts with a conversation.</p>
