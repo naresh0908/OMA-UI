@@ -15,6 +15,8 @@ import { ContactUs } from "../components/ContactUs";
 import { OnionPeel } from "../components/OnionPeel";
 import { HappinessChart } from "../components/HappinessChart";
 import { Footer } from "../components/Footer";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import logo from "../assets/HARTS Consulting LBG.png";
 
 // Elements Overview Data - 8 categories, 2 elements each
 const elementsData = [
@@ -245,6 +247,7 @@ const criticalGaps = [
 
 export default function Dashboard() {
   const navigate = useNavigate();
+  useScrollAnimation();
 
   const handleDownloadPDF = () => {
     alert("Executive PDF report would be generated and downloaded here.");
@@ -256,9 +259,12 @@ export default function Dashboard() {
       <nav className="border-b border-gray-200 animate-fade-in-down">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <h1 className="text-2xl font-light tracking-wider text-[#002D72]">
-              OMA Tool
-            </h1>
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="OMA Tool Logo" className="h-10 w-auto" />
+              <h1 className="text-2xl font-light tracking-wider text-[#002D72]">
+                OMA Tool
+              </h1>
+            </div>
             <div className="flex gap-4">
               <Button
                 variant="ghost"
@@ -281,7 +287,7 @@ export default function Dashboard() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
         {/* Header */}
-        <div className="space-y-2 animate-fade-in-up">
+        <div className="space-y-2 scroll-animate">
           <h2 className="text-5xl font-light text-[#002D72]">
             Strategic Command Center
           </h2>
@@ -295,7 +301,7 @@ export default function Dashboard() {
           {pulseMetrics.map((metric, index) => {
             const Icon = metric.icon;
             return (
-              <Card key={index} className="p-6 space-y-4 border-2 hover:shadow-lg transition-shadow card-hover animate-fade-in-up animate-delay-${(index + 1) * 100}">
+              <Card key={index} className={`p-6 space-y-4 border-2 hover:shadow-lg transition-shadow card-hover scroll-animate scroll-delay-${(index + 1) * 100}`}>
                 <div className="flex items-start justify-between">
                   <div className="space-y-1">
                     <p className="text-sm text-[#4A4A4A]">{metric.title}</p>
@@ -325,7 +331,7 @@ export default function Dashboard() {
         </div>
 
         {/* Radar Chart */}
-        <Card className="p-8 space-y-6 animate-fade-in-up animate-delay-400">
+        <Card className="p-8 space-y-6 scroll-animate">
           <div className="space-y-2">
             <h3 className="text-4xl font-light text-[#002D72]">
               Category Performance Analysis
@@ -369,7 +375,7 @@ export default function Dashboard() {
         </Card>
 
         {/* Business Category — Overall Health */}
-        <div className="space-y-10">
+        <div className="space-y-10 scroll-animate">
           {/* Section Header */}
           <div className="space-y-6">
             <h3 className="text-4xl font-light text-[#002D72]">
@@ -435,7 +441,7 @@ export default function Dashboard() {
               };
 
               return (
-                <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+                <Card key={index} className={`p-6 hover:shadow-lg transition-shadow scroll-animate scroll-delay-${(index + 1) * 100}`}>
                   {/* Category Name */}
                   <h4 className="text-lg font-medium text-[#002D72] mb-4 px-8">
                     {category.name}
@@ -471,7 +477,7 @@ export default function Dashboard() {
         </div>
 
         {/* Elements Overview Section */}
-        <div className="space-y-12">
+        <div className="space-y-12 scroll-animate">
           {/* Section Header */}
           <div className="space-y-4">
             <h3 className="text-5xl font-light text-[#002D72]">
@@ -489,7 +495,7 @@ export default function Dashboard() {
           {elementsData.map((category, catIndex) => {
             const CategoryIcon = category.icon;
             return (
-              <div key={catIndex} className="space-y-8">
+              <div key={catIndex} className="space-y-8 scroll-animate">
                 {/* Category Header */}
                 <div className="flex items-center gap-3">
                   <CategoryIcon className="w-6 h-6 text-[#008489]" />
@@ -501,7 +507,7 @@ export default function Dashboard() {
                 {/* Two Elements Side by Side */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {category.elements.map((element, elIndex) => (
-                    <Card key={elIndex} className="p-6 flex gap-6 hover:shadow-lg transition-shadow">
+                    <Card key={elIndex} className={`p-6 flex gap-6 hover:shadow-lg transition-shadow scroll-animate-scale scroll-delay-${(elIndex + 1) * 100}`}>
                       {/* Circular Progress Ring */}
                       <div className="flex-shrink-0">
                         <svg width="140" height="140" viewBox="0 0 140 140" className="transform -rotate-90">
@@ -595,7 +601,7 @@ export default function Dashboard() {
         </div>
 
         {/* Organizational Health & Sentiment */}
-        <div className="space-y-6">
+        <div className="space-y-6 scroll-animate">
           <div className="space-y-2">
             <h3 className="text-4xl font-light text-[#002D72]">
               Organizational Health & Sentiment
@@ -606,18 +612,18 @@ export default function Dashboard() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <Card className="p-6 flex flex-col items-center justify-center bg-white shadow-sm hover:shadow-md transition-shadow card-hover animate-fade-in-left">
+            <Card className="p-6 flex flex-col items-center justify-center bg-white shadow-sm hover:shadow-md transition-shadow card-hover scroll-animate-left">
               <h4 className="text-xl font-medium mb-4 w-full text-left text-[#002D72]">The HARTS Model</h4>
               <OnionPeel />
             </Card>
-            <div className="h-full animate-fade-in-right">
+            <div className="h-full scroll-animate-right">
               <HappinessChart />
             </div>
           </div>
         </div>
 
         {/* Critical Gaps - Moved below Organizational Health */}
-        <div className="space-y-6">
+        <div className="space-y-6 scroll-animate">
           <div className="flex items-center justify-between">
             <div className="space-y-2">
               <h3 className="text-4xl font-light text-[#002D72]">
@@ -640,7 +646,7 @@ export default function Dashboard() {
             {criticalGaps.map((gap, index) => (
               <div
                 key={index}
-                className="rounded-lg p-6 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-6 card-hover animate-fade-in-up"
+                className={`rounded-lg p-6 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-6 card-hover scroll-animate scroll-delay-${(index + 1) * 100}`}
                 style={{ background: 'linear-gradient(90deg, #002D72 0%, #009b7b 100%)' }}
               >
                 <div className="flex-1 space-y-2">

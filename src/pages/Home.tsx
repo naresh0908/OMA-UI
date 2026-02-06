@@ -21,6 +21,7 @@ import {
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { Footer } from "../components/Footer";
 import logo from "../assets/HARTS Consulting LBG.png";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const categories = [
   { icon: Users, name: "Leadership", color: "#002D72" },
@@ -43,6 +44,7 @@ const maturityStages = [
 
 export default function Home() {
   const navigate = useNavigate();
+  useScrollAnimation();
 
   return (
     <div className="min-h-screen bg-white">
@@ -77,15 +79,15 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 scroll-animate">
         <div className="max-w-7xl mx-auto text-center space-y-6">
-          <h2 className="text-5xl md:text-6xl font-light text-[#002D72] animate-fade-in-up">
+          <h2 className="text-5xl md:text-6xl font-light text-[#002D72]">
             Measure, Improve, Transform
           </h2>
-          <p className="text-xl text-[#4A4A4A] max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
+          <p className="text-xl text-[#4A4A4A] max-w-3xl mx-auto">
             A data-driven framework to evolve your organizational maturity.
           </p>
-          <div className="pt-4 animate-fade-in-up animate-delay-400">
+          <div className="pt-4">
             <Button
               onClick={() => navigate("/survey")}
               className="h-14 px-12 text-lg bg-[#008489] hover:bg-[#006b6f] text-white"
@@ -97,11 +99,11 @@ export default function Home() {
       </section>
 
       {/* Section 1: What is OMA? */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F5F7FA]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F5F7FA] scroll-animate scroll-delay-100">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Image */}
-            <div className="order-2 lg:order-1 animate-fade-in-left">
+            <div className="order-2 lg:order-1">
               <div className="relative rounded-2xl overflow-hidden shadow-xl img-zoom">
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1764502547781-a83c217df9b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpc29tZXRyaWMlMjBidWlsZGluZyUyMGJsb2NrcyUyMHN0cnVjdHVyZXxlbnwxfHx8fDE3NzAyNzc5NDR8MA&ixlib=rb-4.1.0&q=80&w=1080"
@@ -113,7 +115,7 @@ export default function Home() {
             </div>
 
             {/* Right Side - Content */}
-            <div className="order-1 lg:order-2 space-y-6 animate-fade-in-right">
+            <div className="order-1 lg:order-2 space-y-6">
               <h3 className="text-4xl font-light text-[#002D72]">
                 What is OMA?
               </h3>
@@ -133,7 +135,7 @@ export default function Home() {
       </section>
 
       {/* Section 2: Why OMA? */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white scroll-animate scroll-delay-100">
         <div className="max-w-7xl mx-auto space-y-12">
           <div className="text-center space-y-3">
             <h3 className="text-4xl font-light text-[#002D72]">
@@ -146,7 +148,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Benchmarking Card */}
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 space-y-4 card-hover animate-fade-in-up animate-delay-100">
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 space-y-4 card-hover">
               <div className="w-14 h-14 rounded-full bg-[#008489]/10 flex items-center justify-center">
                 <Globe className="w-7 h-7 text-[#008489]" />
               </div>
@@ -159,7 +161,7 @@ export default function Home() {
             </div>
 
             {/* Clarity Card */}
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 space-y-4 card-hover animate-fade-in-up animate-delay-200">
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 space-y-4 card-hover">
               <div className="w-14 h-14 rounded-full bg-[#008489]/10 flex items-center justify-center">
                 <Lightbulb className="w-7 h-7 text-[#008489]" />
               </div>
@@ -172,7 +174,7 @@ export default function Home() {
             </div>
 
             {/* Roadmap Card */}
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 space-y-4 card-hover animate-fade-in-up animate-delay-300">
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 space-y-4 card-hover">
               <div className="w-14 h-14 rounded-full bg-[#008489]/10 flex items-center justify-center">
                 <ArrowRight className="w-7 h-7 text-[#008489]" />
               </div>
@@ -188,7 +190,7 @@ export default function Home() {
       </section>
 
       {/* Section 3: How OMA Works */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC] scroll-animate scroll-delay-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-16">
             <h3 className="text-4xl font-light text-[#002D72]">
@@ -280,7 +282,7 @@ export default function Home() {
       </section>
 
       {/* Categories Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 scroll-animate scroll-delay-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-light text-[#002D72] mb-3">
@@ -294,7 +296,7 @@ export default function Home() {
             {categories.map(({ icon: Icon, name, color }, index) => (
               <div
                 key={index}
-                className={`flex flex-col items-center text-center space-y-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow card-hover animate-fade-in-up animate-delay-${(index + 1) * 100}`}
+                className="flex flex-col items-center text-center space-y-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow card-hover"
               >
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center"
@@ -310,7 +312,7 @@ export default function Home() {
       </section>
 
       {/* Maturity Timeline */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 scroll-animate scroll-delay-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-light text-[#002D72] mb-3">
@@ -351,7 +353,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#002D72]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#002D72] scroll-animate scroll-delay-100">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h3 className="text-4xl font-light text-white">
             Ready to transform your organization?
