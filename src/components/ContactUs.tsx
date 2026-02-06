@@ -8,60 +8,51 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 export function ContactUs() {
     return (
         <div className="bg-white py-20 px-8" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-            <div className="max-w-7xl mx-auto grid grid-cols-4 gap-8 items-start">
-                {/* Left Column: Logo Only */}
-                <div className="flex-shrink-0 pt-2" style={{ width: '200px' }}>
-                    {/* HARTS Logo - Aligned to top left */}
+            <div className="max-w-5xl mx-auto flex gap-12 items-start">
+                {/* Left: Logo Only */}
+                <div className="flex-shrink-0">
                     <img
                         src="/HARTS LOGO.png"
                         alt="HARTS Logo"
-                        className="w-full h-auto object-contain"
-                        style={{ maxWidth: '100%' }}
+                        className="h-16 w-auto object-contain"
                     />
                 </div>
 
-                {/* Right Column: Copy & Form */}
-                <div className="col-span-3 space-y-12">
-                    {/* Header Section (Now part of the right block) */}
-                    <div className="space-y-3">
-                        <p className="text-[#4a4a4a] text-2xl font-light tracking-wide">Change starts with a conversation.</p>
-                        <h2 className="text-5xl md:text-6xl font-bold tracking-tight uppercase" style={{ color: '#009b7b' }}>
+                {/* Right: Header + Form */}
+                <div className="flex-1 space-y-8">
+                    {/* Header Text */}
+                    <div className="space-y-2">
+                        <p className="text-[#4a4a4a] text-xl font-light tracking-wide">Change starts with a conversation.</p>
+                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase leading-tight" style={{ color: '#009b7b' }}>
                             SPEAK TO AN EXPERT
                         </h2>
                     </div>
 
-                    <form className="space-y-12" onSubmit={(e) => e.preventDefault()}>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
-                            <div className="space-y-2 group">
-                                <Label htmlFor="firstName" className="text-[#8c9e99] text-base font-medium">*First Name</Label>
-                                <Input id="firstName" className="bg-transparent border-t-0 border-x-0 border-b-2 rounded-none px-0 py-2 focus-visible:ring-0 transition-colors" style={{ borderBottomColor: '#b8c5c2', outlineColor: '#009b7b' }} required />
-                            </div>
-                            <div className="space-y-2 group">
-                                <Label htmlFor="lastName" className="text-[#8c9e99] text-base font-medium">*Last Name</Label>
-                                <Input id="lastName" className="bg-transparent border-t-0 border-x-0 border-b-2 rounded-none px-0 py-2 focus-visible:ring-0 transition-colors" style={{ borderBottomColor: '#b8c5c2', outlineColor: '#009b7b' }} required />
-                            </div>
+                    {/* Form */}
+                    <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                        <div className="space-y-2 group">
+                            <Label htmlFor="firstName" className="text-[#8c9e99] text-base font-medium">*First Name</Label>
+                            <Input id="firstName" className="bg-transparent border-t-0 border-x-0 border-b-2 rounded-none px-0 py-2 focus-visible:ring-0 transition-colors" style={{ borderBottomColor: '#b8c5c2', outlineColor: '#009b7b' }} required />
                         </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
-                            <div className="space-y-2 group">
-                                <Label htmlFor="company" className="text-[#8c9e99] text-base font-medium">*Company</Label>
-                                <Input id="company" className="bg-transparent border-t-0 border-x-0 border-b-2 rounded-none px-0 py-2 focus-visible:ring-0 transition-colors" style={{ borderBottomColor: '#b8c5c2', outlineColor: '#009b7b' }} required />
-                            </div>
-                            <div className="space-y-2 group">
-                                <Label htmlFor="jobTitle" className="text-[#8c9e99] text-base font-medium">*Job Title</Label>
-                                <Input id="jobTitle" className="bg-transparent border-t-0 border-x-0 border-b-2 rounded-none px-0 py-2 focus-visible:ring-0 transition-colors" style={{ borderBottomColor: '#b8c5c2', outlineColor: '#009b7b' }} required />
-                            </div>
+                        <div className="space-y-2 group">
+                            <Label htmlFor="lastName" className="text-[#8c9e99] text-base font-medium">*Last Name</Label>
+                            <Input id="lastName" className="bg-transparent border-t-0 border-x-0 border-b-2 rounded-none px-0 py-2 focus-visible:ring-0 transition-colors" style={{ borderBottomColor: '#b8c5c2', outlineColor: '#009b7b' }} required />
                         </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
-                            <div className="space-y-2 group">
-                                <Label htmlFor="email" className="text-[#8c9e99] text-base font-medium">*Email Address</Label>
-                                <Input id="email" type="email" className="bg-transparent border-t-0 border-x-0 border-b-2 rounded-none px-0 py-2 focus-visible:ring-0 transition-colors" style={{ borderBottomColor: '#b8c5c2', outlineColor: '#009b7b' }} required />
-                            </div>
-                            <div className="space-y-2 group">
-                                <Label htmlFor="phone" className="text-[#8c9e99] text-base font-medium">*Phone Number</Label>
-                                <Input id="phone" type="tel" className="bg-transparent border-t-0 border-x-0 border-b-2 rounded-none px-0 py-2 focus-visible:ring-0 transition-colors" style={{ borderBottomColor: '#b8c5c2', outlineColor: '#009b7b' }} required />
-                            </div>
+                        <div className="space-y-2 group">
+                            <Label htmlFor="company" className="text-[#8c9e99] text-base font-medium">*Company</Label>
+                            <Input id="company" className="bg-transparent border-t-0 border-x-0 border-b-2 rounded-none px-0 py-2 focus-visible:ring-0 transition-colors" style={{ borderBottomColor: '#b8c5c2', outlineColor: '#009b7b' }} required />
+                        </div>
+                        <div className="space-y-2 group">
+                            <Label htmlFor="jobTitle" className="text-[#8c9e99] text-base font-medium">*Job Title</Label>
+                            <Input id="jobTitle" className="bg-transparent border-t-0 border-x-0 border-b-2 rounded-none px-0 py-2 focus-visible:ring-0 transition-colors" style={{ borderBottomColor: '#b8c5c2', outlineColor: '#009b7b' }} required />
+                        </div>
+                        <div className="space-y-2 group">
+                            <Label htmlFor="email" className="text-[#8c9e99] text-base font-medium">*Email Address</Label>
+                            <Input id="email" type="email" className="bg-transparent border-t-0 border-x-0 border-b-2 rounded-none px-0 py-2 focus-visible:ring-0 transition-colors" style={{ borderBottomColor: '#b8c5c2', outlineColor: '#009b7b' }} required />
+                        </div>
+                        <div className="space-y-2 group">
+                            <Label htmlFor="phone" className="text-[#8c9e99] text-base font-medium">*Phone Number</Label>
+                            <Input id="phone" type="tel" className="bg-transparent border-t-0 border-x-0 border-b-2 rounded-none px-0 py-2 focus-visible:ring-0 transition-colors" style={{ borderBottomColor: '#b8c5c2', outlineColor: '#009b7b' }} required />
                         </div>
 
                         <div className="space-y-2 group">
