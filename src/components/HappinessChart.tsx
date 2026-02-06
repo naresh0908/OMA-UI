@@ -13,7 +13,7 @@ const happinessData = [
 
 export function HappinessChart() {
     return (
-        <Card className="flex flex-col h-full shadow-md border-0 bg-white/50 backdrop-blur-sm">
+        <Card className="flex flex-col h-full shadow-md border border-gray-200 bg-white/50 backdrop-blur-sm">
             <CardHeader className="items-center pb-2">
                 <CardTitle>Employee Happiness Index</CardTitle>
                 <CardDescription>Sentiment distribution across the organization (1-5 Scale)</CardDescription>

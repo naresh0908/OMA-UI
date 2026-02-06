@@ -611,14 +611,102 @@ export default function Dashboard() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <Card className="p-6 flex flex-col items-center justify-center bg-white shadow-sm hover:shadow-md transition-shadow card-hover scroll-animate-left">
               <h4 className="text-xl font-medium mb-4 w-full text-left text-[#002D72]">The HARTS Model</h4>
               <OnionPeel />
             </Card>
-            <div className="h-full scroll-animate-right">
+            <div className="h-full scroll-animate">
               <HappinessChart />
             </div>
+            {/* eNPS Score Card */}
+            <Card className="p-6 bg-white shadow-sm hover:shadow-md transition-shadow card-hover scroll-animate-right">
+              <h4 className="text-xl font-medium mb-4 text-[#002D72]">Employee Net Promoter Score (eNPS)</h4>
+              <div className="flex flex-col items-center">
+                {/* Donut Chart */}
+                <div className="relative w-26 h-26 mb-3">
+                  <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
+                    {/* Background circle */}
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="#f0f0f0" strokeWidth="12" />
+                    {/* Promoters segment (green) - 54% = 194.4 degrees */}
+                    <circle 
+                      cx="50" cy="50" r="40" 
+                      fill="none" 
+                      stroke="#22c55e" 
+                      strokeWidth="7"
+                      strokeDasharray="135.7 251.3"
+                      strokeDashoffset="0"
+                      strokeLinecap="round"
+                    />
+                    {/* Detractors segment (red) - 27% */}
+                    <circle 
+                      cx="50" cy="50" r="40" 
+                      fill="none" 
+                      stroke="#ef4444" 
+                      strokeWidth="7"
+                      strokeDasharray="67.9 251.3"
+                      strokeDashoffset="-135.7"
+                      strokeLinecap="round"
+                    />
+                    {/* Passives segment (yellow) - 19% */}
+                    <circle 
+                      cx="50" cy="50" r="40" 
+                      fill="none" 
+                      stroke="#fbbf24" 
+                      strokeWidth="7"
+                      strokeDasharray="47.7 251.3"
+                      strokeDashoffset="-203.6"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                  {/* Center content */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <span className="text-4xl font-light text-[#4A4A4A]">50</span>
+                    <div className="flex items-center gap-1 text-xs text-[#22c55e]">
+                      <span>21</span>
+                      <span>▲</span>
+                    </div>
+                    <span className="text-xs text-[#8c9e99]">From earlier</span>
+                  </div>
+                </div>
+                {/* Legend */}
+                <div className="w-full space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-[#22c55e]" />
+                      <span className="text-sm text-[#4A4A4A]">Promoters</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-[#4A4A4A]">
+                      <span className="font-medium">27</span>
+                      <span className="text-[#8c9e99]">|</span>
+                      <span>54%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-[#ef4444]" />
+                      <span className="text-sm text-[#4A4A4A]">Detractors</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-[#4A4A4A]">
+                      <span className="font-medium">14</span>
+                      <span className="text-[#8c9e99]">|</span>
+                      <span>27%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-[#fbbf24]" />
+                      <span className="text-sm text-[#4A4A4A]">Passives</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-[#4A4A4A]">
+                      <span className="font-medium">9</span>
+                      <span className="text-[#8c9e99]">|</span>
+                      <span>19%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
 
