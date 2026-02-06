@@ -12,6 +12,11 @@ import {
   Globe,
   Lightbulb,
   ArrowRight,
+  ClipboardCheck,
+  ListChecks,
+  ArrowUpDown,
+  FileEdit,
+  BarChart3,
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { Footer } from "../components/Footer";
@@ -177,6 +182,98 @@ export default function Home() {
               <p className="text-[#4A4A4A] leading-relaxed">
                 Generate a prioritized action plan for immediate ROI.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: How OMA Works */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-4 mb-16">
+            <h3 className="text-4xl font-light text-[#002D72]">
+              How OMA Works
+            </h3>
+            <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
+              A comprehensive and interactive diagnostic journey designed for precision.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-16 lg:gap-x-48 items-start">
+
+            {/* Left Column: Interactive Questions */}
+            <div className="space-y-8">
+              <h4 className="text-2xl font-medium text-[#002D72]">The Interactive Assessment</h4>
+              <p className="text-[#4A4A4A]">To accurately capture your organizational landscape, OMA utilizes a variety of interactive question formats:</p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                  <div className="w-10 h-10 rounded-lg bg-[#008489]/10 flex items-center justify-center shrink-0">
+                    <ClipboardCheck className="w-5 h-5 text-[#008489]" />
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-[#002D72]">Single Choice</h5>
+                    <p className="text-sm text-[#4A4A4A]">Select the best-fit response for clear baseline data.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                  <div className="w-10 h-10 rounded-lg bg-[#008489]/10 flex items-center justify-center shrink-0">
+                    <ListChecks className="w-5 h-5 text-[#008489]" />
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-[#002D72]">Multi-Choice</h5>
+                    <p className="text-sm text-[#4A4A4A]">Identify multiple overlapping organizational factors.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                  <div className="w-10 h-10 rounded-lg bg-[#008489]/10 flex items-center justify-center shrink-0">
+                    <ArrowUpDown className="w-5 h-5 text-[#008489]" />
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-[#002D72]">Rearrange</h5>
+                    <p className="text-sm text-[#4A4A4A]">Rank priorities via drag-and-drop to show preference.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                  <div className="w-10 h-10 rounded-lg bg-[#008489]/10 flex items-center justify-center shrink-0">
+                    <FileEdit className="w-5 h-5 text-[#008489]" />
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-[#002D72]">Fill in the Blanks</h5>
+                    <p className="text-sm text-[#4A4A4A]">Provide contextual data for qualitative depth.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Logic & Results */}
+            <div className="space-y-10 relative">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#008489]/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110" />
+              <div className="relative space-y-6">
+                <div className="w-16 h-16 rounded-2xl bg-[#002D72] flex items-center justify-center shadow-lg transform">
+                  <BarChart3 className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-2xl font-medium text-[#002D72]">Data-Driven Evaluation</h4>
+                <p className="text-[#4A4A4A] leading-relaxed">
+                  Every response is processed through our <span className="text-[#008489] font-medium italic">Proprietary Scoring Engine</span>. We apply weighted logic and cross-category correlation to:
+                </p>
+                <ul className="space-y-3 border-l-2 border-[#008489]/20 pl-6">
+                  {[
+                    "Benchmark against industry maturity levels",
+                    "Identify hidden strategic bottlenecks",
+                    "Correlate operational data with cultural performance",
+                    "Visualize real-time transformation roadmaps",
+                  ].map((item, i) => (
+                    <li key={i} className="text-sm text-[#4A4A4A] leading-relaxed">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+              </div>
             </div>
           </div>
         </div>
