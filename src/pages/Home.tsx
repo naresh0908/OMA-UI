@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { Footer } from "../components/Footer";
+import { HeroBackground } from "../components/HeroBackground";
 import logo from "../assets/HARTS Consulting LBG.png";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
@@ -79,8 +80,9 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 scroll-animate">
-        <div className="max-w-7xl mx-auto text-center space-y-6">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 scroll-animate overflow-hidden">
+        <HeroBackground />
+        <div className="max-w-7xl mx-auto text-center space-y-6 relative z-10">
           <h2 className="text-5xl md:text-6xl font-light text-[#002D72]">
             Measure, Improve, Transform
           </h2>
@@ -90,7 +92,7 @@ export default function Home() {
           <div className="pt-4">
             <Button
               onClick={() => navigate("/survey")}
-              className="h-14 px-12 text-lg bg-[#008489] hover:bg-[#006b6f] text-white"
+              className="h-14 px-12 text-lg bg-[#008489] hover:bg-[#006b6f] text-white shadow-lg hover:shadow-xl transition-shadow"
             >
               Start Assessment
             </Button>
