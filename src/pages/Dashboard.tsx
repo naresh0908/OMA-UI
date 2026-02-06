@@ -26,24 +26,6 @@ const pulseMetrics = [
     icon: TrendingUp,
     color: "#008489",
   },
-  {
-    title: "Industry Percentile",
-    value: "72nd",
-    max: "100th",
-    trend: "+8",
-    trendLabel: "percentile points",
-    icon: TrendingUp,
-    color: "#002D72",
-  },
-  {
-    title: "Year-over-Year Growth",
-    value: "+0.2",
-    max: "1.0",
-    trend: "6.3%",
-    trendLabel: "improvement rate",
-    icon: TrendingUp,
-    color: "#008489",
-  },
 ];
 
 const radarData = [
@@ -136,13 +118,6 @@ export default function Dashboard() {
                 className="text-[#4A4A4A] hover:text-[#002D72]"
               >
                 Home
-              </Button>
-              <Button
-                variant="ghost"
-                onClick={() => navigate("/survey")}
-                className="text-[#4A4A4A] hover:text-[#002D72]"
-              >
-                Retake Assessment
               </Button>
               <Button
                 variant="ghost"
