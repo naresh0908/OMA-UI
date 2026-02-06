@@ -192,91 +192,88 @@ export default function Home() {
       </section>
 
       {/* Section 3: How OMA Works */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC] scroll-animate scroll-delay-100">
+      <section className="py-28 px-4 sm:px-6 lg:px-8 bg-[#F7F9FC] scroll-animate scroll-delay-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-16">
-            <h3 className="text-4xl font-light text-[#002D72]">
+            <h3 className="text-4xl md:text-5xl font-light text-[#002D72]">
               How OMA Works
             </h3>
-            <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
-              A comprehensive and interactive diagnostic journey designed for precision.
+            <p className="text-lg text-[#6B7280] max-w-xl mx-auto leading-relaxed">
+              A comprehensive diagnostic journey designed for precision and clarity.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-16 lg:gap-x-48 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-stretch">
 
             {/* Left Column: Interactive Questions */}
-            <div className="space-y-8">
-              <h4 className="text-2xl font-medium text-[#002D72]">The Interactive Assessment</h4>
-              <p className="text-[#4A4A4A]">To accurately capture your organizational landscape, OMA utilizes a variety of interactive question formats:</p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
-                  <div className="w-10 h-10 rounded-lg bg-[#008489]/10 flex items-center justify-center shrink-0">
-                    <ClipboardCheck className="w-5 h-5 text-[#008489]" />
+            <div className="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-8 lg:p-10 space-y-7">
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#002D72] flex items-center justify-center">
+                    <ClipboardCheck className="w-5 h-5 text-white" />
                   </div>
-                  <div>
-                    <h5 className="font-semibold text-[#002D72]">Single Choice</h5>
-                    <p className="text-sm text-[#4A4A4A]">Select the best-fit response for clear baseline data.</p>
-                  </div>
+                  <h4 className="text-xl font-semibold text-[#002D72]">The Interactive Assessment</h4>
                 </div>
+                <p className="text-[#6B7280] leading-relaxed text-sm pl-[52px]">
+                  OMA uses interactive question formats to capture your organizational landscape:
+                </p>
+              </div>
 
-                <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
-                  <div className="w-10 h-10 rounded-lg bg-[#008489]/10 flex items-center justify-center shrink-0">
-                    <ListChecks className="w-5 h-5 text-[#008489]" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: ClipboardCheck, title: "Single Choice", desc: "Best-fit response for clear baseline data" },
+                  { icon: ListChecks, title: "Multi-Choice", desc: "Identify overlapping organizational factors" },
+                  { icon: ArrowUpDown, title: "Rearrange", desc: "Rank priorities via drag-and-drop ordering" },
+                  { icon: FileEdit, title: "Fill in the Blanks", desc: "Contextual data for qualitative depth" },
+                ].map(({ icon: Icon, title, desc }, i) => (
+                  <div key={i} className="group flex items-center gap-4 p-4 rounded-xl bg-[#F7F9FC] border border-transparent hover:border-[#008489]/20 hover:bg-white hover:shadow-sm transition-all duration-200">
+                    <div className="w-9 h-9 rounded-lg bg-[#008489]/10 flex items-center justify-center shrink-0 group-hover:bg-[#008489]/15 transition-colors">
+                      <Icon className="w-4.5 h-4.5 text-[#008489]" />
+                    </div>
+                    <div className="space-y-0.5 min-w-0">
+                      <h5 className="font-semibold text-[#002D72] text-sm">{title}</h5>
+                      <p className="text-xs text-[#6B7280] leading-relaxed">{desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h5 className="font-semibold text-[#002D72]">Multi-Choice</h5>
-                    <p className="text-sm text-[#4A4A4A]">Identify multiple overlapping organizational factors.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
-                  <div className="w-10 h-10 rounded-lg bg-[#008489]/10 flex items-center justify-center shrink-0">
-                    <ArrowUpDown className="w-5 h-5 text-[#008489]" />
-                  </div>
-                  <div>
-                    <h5 className="font-semibold text-[#002D72]">Rearrange</h5>
-                    <p className="text-sm text-[#4A4A4A]">Rank priorities via drag-and-drop to show preference.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
-                  <div className="w-10 h-10 rounded-lg bg-[#008489]/10 flex items-center justify-center shrink-0">
-                    <FileEdit className="w-5 h-5 text-[#008489]" />
-                  </div>
-                  <div>
-                    <h5 className="font-semibold text-[#002D72]">Fill in the Blanks</h5>
-                    <p className="text-sm text-[#4A4A4A]">Provide contextual data for qualitative depth.</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
-            {/* Right Column: Logic & Results */}
-            <div className="space-y-10 relative">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#008489]/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110" />
-              <div className="relative space-y-6">
-                <div className="w-16 h-16 rounded-2xl bg-[#002D72] flex items-center justify-center shadow-lg transform">
-                  <BarChart3 className="w-8 h-8 text-white" />
+            {/* Right Column: Data-Driven Evaluation */}
+            <div className="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-8 lg:p-10 space-y-7">
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#008489] flex items-center justify-center">
+                    <BarChart3 className="w-5 h-5 text-white" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-[#002D72]">Data-Driven Evaluation</h4>
                 </div>
-                <h4 className="text-2xl font-medium text-[#002D72]">Data-Driven Evaluation</h4>
-                <p className="text-[#4A4A4A] leading-relaxed">
-                  Every response is processed through our <span className="text-[#008489] font-medium italic">Proprietary Scoring Engine</span>. We apply weighted logic and cross-category correlation to:
+                <p className="text-[#6B7280] leading-relaxed text-sm pl-[52px]">
+                  Every response is processed through our{" "}
+                  <span className="text-[#008489] font-semibold">Proprietary Scoring Engine</span>{" "}
+                  with weighted logic and cross-category correlation.
                 </p>
-                <ul className="space-y-3 border-l-2 border-[#008489]/20 pl-6">
-                  {[
-                    "Benchmark against industry maturity levels",
-                    "Identify hidden strategic bottlenecks",
-                    "Correlate operational data with cultural performance",
-                    "Visualize real-time transformation roadmaps",
-                  ].map((item, i) => (
-                    <li key={i} className="text-sm text-[#4A4A4A] leading-relaxed">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              </div>
 
+              <div className="space-y-3">
+                {[
+                  { label: "Benchmark", text: "Compare against industry maturity levels" },
+                  { label: "Identify", text: "Surface hidden strategic bottlenecks" },
+                  { label: "Correlate", text: "Operational data with cultural performance" },
+                  { label: "Visualize", text: "Real-time transformation roadmaps" },
+                ].map(({ label, text }, i) => (
+                  <div key={i} className="group flex items-center gap-5 p-4 rounded-xl bg-[#F7F9FC] border border-transparent hover:border-[#008489]/20 hover:bg-white hover:shadow-sm transition-all duration-200">
+                    <div className="w-9 h-9 rounded-lg bg-[#002D72]/10 flex items-center justify-center shrink-0 group-hover:bg-[#002D72]/15 transition-colors">
+                      <svg className="w-4 h-4 text-[#002D72]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-sm font-semibold text-[#002D72]">{label}</span>
+                      <span className="text-sm text-[#6B7280]"> — {text}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
