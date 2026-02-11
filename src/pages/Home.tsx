@@ -36,11 +36,11 @@ const categories = [
 ];
 
 const maturityStages = [
-  { stage: 1, name: "Startup", description: "Ad-hoc processes" },
-  { stage: 2, name: "Emerging", description: "Repeatable patterns" },
-  { stage: 3, name: "Developing", description: "Defined standards" },
-  { stage: 4, name: "Maturing", description: "Measured & managed" },
-  { stage: 5, name: "Continuous Improvement", description: "Optimized systems" },
+  { stage: 1, name: "Foundation", description: "Building core capabilities" },
+  { stage: 2, name: "Emerging", description: "Establishing patterns" },
+  { stage: 3, name: "Developing", description: "Standardizing practices" },
+  { stage: 4, name: "Maturing", description: "Optimizing performance" },
+  { stage: 5, name: "Leading", description: "Driving innovation" },
 ];
 
 export default function Home() {
@@ -315,10 +315,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-light text-[#002D72] mb-3">
-              5 Stages of Maturity
+              Your Organizational Growth Journey
             </h3>
             <p className="text-[#4A4A4A]">
-              Understand where you are and chart your path forward
+              Every organization is on a unique path to excellence—discover your next milestone
             </p>
           </div>
           <div className="relative">
