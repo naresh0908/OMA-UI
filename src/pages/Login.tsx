@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 import logo from "../assets/logo.png";
+import "../styles/login-background.css";
 
 export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const canvasRef = useRef<HTMLDivElement>(null);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,23 +22,108 @@ export default function Login() {
     navigate("/home");
   };
 
+  useEffect(() => {
+    const container = canvasRef.current;
+    if (!container) return;
+
+    // Create network nodes
+    const nodeCount = 20;
+    const nodes: HTMLDivElement[] = [];
+    
+    for (let i = 0; i < nodeCount; i++) {
+      const node = document.createElement('div');
+      node.className = 'network-node';
+      node.style.left = `${Math.random() * 100}%`;
+      node.style.top = `${Math.random() * 100}%`;
+      node.style.animationDelay = `${Math.random() * 4}s`;
+      container.appendChild(node);
+      nodes.push(node);
+    }
+
+    // Create particles
+    const particleCount = 50;
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+      particle.style.animationDelay = `${Math.random() * 3}s`;
+      container.appendChild(particle);
+    }
+
+    // Create hexagons
+    const hexCount = 8;
+    for (let i = 0; i < hexCount; i++) {
+      const hex = document.createElement('div');
+      hex.className = 'hexagon';
+      hex.style.left = `${Math.random() * 90}%`;
+      hex.style.top = `${Math.random() * 90}%`;
+      hex.style.animationDelay = `${Math.random() * 25}s`;
+      container.appendChild(hex);
+    }
+
+    // Create data streams
+    const streamCount = 5;
+    for (let i = 0; i < streamCount; i++) {
+      const stream = document.createElement('div');
+      stream.className = 'data-stream';
+      stream.style.left = `${Math.random() * 100}%`;
+      stream.style.animationDelay = `${Math.random() * 3}s`;
+      stream.style.animationDuration = `${3 + Math.random() * 2}s`;
+      container.appendChild(stream);
+    }
+
+    // Create geometric shapes
+    const shapes = ['circle', 'square'];
+    for (let i = 0; i < 6; i++) {
+      const shape = document.createElement('div');
+      shape.className = `geometric-shape ${shapes[Math.floor(Math.random() * shapes.length)]}`;
+      shape.style.width = `${50 + Math.random() * 100}px`;
+      shape.style.height = `${50 + Math.random() * 100}px`;
+      shape.style.left = `${Math.random() * 90}%`;
+      shape.style.top = `${Math.random() * 90}%`;
+      shape.style.animationDelay = `${Math.random() * 20}s`;
+      shape.style.animationDuration = `${15 + Math.random() * 10}s`;
+      container.appendChild(shape);
+    }
+
+    return () => {
+      // Cleanup
+      while (container.firstChild) {
+        container.removeChild(container.firstChild);
+      }
+    };
+  }, []);
+
   return (
     <div className="flex h-screen w-full">
-      {/* Left Side - Image with Logo */}
-      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden img-zoom">
-        <div className="absolute inset-0 bg-black/40 z-10" />
-        <ImageWithFallback
-          src="https://images.unsplash.com/photo-1718066236074-13f8cf7ae93e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmFsJTIwZ2xhc3MlMjBidWlsZGluZ3xlbnwxfHx8fDE3NzAxODcyNDZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-          alt="Modern Architecture"
-          className="w-full h-full object-cover"
-        />
+      {/* Left Side - Premium Animated Background with Logo */}
+      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
+        <div className="login-background">
+          {/* Grid Overlay */}
+          <div className="grid-overlay" />
+          
+          {/* Glowing Orbs */}
+          <div className="glow-orb glow-orb-1" />
+          <div className="glow-orb glow-orb-2" />
+          <div className="glow-orb glow-orb-3" />
+          
+          {/* Scan Line */}
+          <div className="scan-line" />
+          
+          {/* Animated Elements Container */}
+          <div ref={canvasRef} className="particles" />
+        </div>
+        
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center animate-fade-in">
           <img
             src={logo}
             alt="OMA Tool Logo"
-            className="h-32 w-auto mb-6 drop-shadow-lg animate-fade-in-down"
+            className="h-32 w-auto mb-6 drop-shadow-2xl animate-fade-in-down"
+            style={{ filter: 'drop-shadow(0 0 30px rgba(99, 179, 237, 0.5))' }}
           />
-          <h1 className="text-white text-6xl font-light tracking-wider drop-shadow-md animate-fade-in-up animate-delay-200">
+          <h1 className="text-white text-6xl font-light tracking-wider animate-fade-in-up animate-delay-200"
+              style={{ textShadow: '0 0 40px rgba(99, 179, 237, 0.6), 0 0 20px rgba(99, 179, 237, 0.4)' }}>
             OMA Tool
           </h1>
         </div>
