@@ -318,7 +318,7 @@ export default function Home() {
               Your Organizational Growth Journey
             </h3>
             <p className="text-[#4A4A4A]">
-              Every organization is on a unique path to excellence—discover your next milestone
+              Every organization is on a unique path to excellence - discover your next milestone
             </p>
           </div>
           <div className="relative">
