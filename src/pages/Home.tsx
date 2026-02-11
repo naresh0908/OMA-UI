@@ -203,18 +203,18 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
 
             {/* Left Column: Interactive Questions */}
             <div className="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-8 lg:p-10 space-y-7 gradient-border-hover">
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#002D72] flex items-center justify-center">
-                    <ClipboardCheck className="w-5 h-5 text-white" />
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#002D72] flex items-center justify-center flex-shrink-0">
+                    <ClipboardCheck className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-xl font-semibold text-[#002D72]">The Interactive Assessment</h4>
+                  <h4 className="text-xl font-semibold text-[#002D72] leading-tight">The Interactive Assessment</h4>
                 </div>
-                <p className="text-[#6B7280] leading-relaxed text-sm pl-[52px]">
+                <p className="text-[#6B7280] leading-relaxed text-sm pl-0">
                   OMA uses interactive question formats to capture your organizational landscape:
                 </p>
               </div>
@@ -242,13 +242,13 @@ export default function Home() {
             {/* Right Column: Data-Driven Evaluation */}
             <div className="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-8 lg:p-10 space-y-7 gradient-border-hover">
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#008489] flex items-center justify-center">
-                    <BarChart3 className="w-5 h-5 text-white" />
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#008489] flex items-center justify-center flex-shrink-0">
+                    <BarChart3 className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-xl font-semibold text-[#002D72]">Data-Driven Evaluation</h4>
+                  <h4 className="text-xl font-semibold text-[#002D72] leading-tight">Data-Driven Evaluation</h4>
                 </div>
-                <p className="text-[#6B7280] leading-relaxed text-sm pl-[52px]">
+                <p className="text-[#6B7280] leading-relaxed text-sm pl-0">
                   Every response is processed through our{" "}
                   <span className="text-[#008489] font-semibold">Proprietary Scoring Engine</span>{" "}
                   with weighted logic and cross-category correlation.
