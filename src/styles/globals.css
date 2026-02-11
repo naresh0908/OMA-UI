@@ -39,7 +39,6 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-}
 
 .dark {
   --background: oklch(0.145 0 0);
@@ -76,7 +75,6 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
-}
 
 @theme inline {
   --color-background: var(--background);
@@ -117,7 +115,6 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-}
 
 @layer base {
   * {
@@ -129,7 +126,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-}
 
 /**
  * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
@@ -178,40 +174,37 @@
       line-height: 1.5;
     }
   }
-}
 
 html {
   font-size: var(--font-size);
+
 }
 
-/* Gradient border effect on hover */
-.gradient-border-hover {
-  position: relative;
-  border: 1px solid transparent;
-  background-clip: padding-box;
-  transition: all 0.3s ease;
-}
 
 .gradient-border-hover::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, #002D72, #008489, #002D72);
+  inset: -2px;
+  background: linear-gradient(135deg, #0B3C6F, #0F6A8A, #0E8F73);
   border-radius: inherit;
-  padding: 1px;
-  pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
 }
 
-.gradient-border-hover:hover {
-  border-color: transparent;
-}
-
 .gradient-border-hover:hover::before {
   opacity: 1;
+}
+
+/* Gradient border effect on hover */
+.gradient-border-hover {
+  position: relative;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: all 0.3s ease;
+}
+
+.gradient-border-hover:hover {
+  border: 2px solid transparent !important;
+  background-image: linear-gradient(white, white), linear-gradient(135deg, #0B3C6F, #0F6A8A, #0E8F73) !important;
 }
