@@ -183,3 +183,35 @@
 html {
   font-size: var(--font-size);
 }
+
+/* Gradient border effect on hover */
+.gradient-border-hover {
+  position: relative;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.3s ease;
+}
+
+.gradient-border-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #002D72, #008489, #002D72);
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.gradient-border-hover:hover {
+  border-color: transparent;
+}
+
+.gradient-border-hover:hover::before {
+  opacity: 1;
+}

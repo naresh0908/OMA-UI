@@ -108,7 +108,7 @@ export default function Home() {
             <div className="order-2 lg:order-1">
               <div className="relative rounded-2xl overflow-hidden shadow-xl img-zoom">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1764502547781-a83c217df9b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpc29tZXRyaWMlMjBidWlsZGluZyUyMGJsb2NrcyUyMHN0cnVjdHVyZXxlbnwxfHx8fDE3NzAyNzc5NDR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="/what is oma.png"
                   alt="Abstract Structure"
                   className="w-full h-[400px] object-cover"
                 />
@@ -150,7 +150,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Benchmarking Card */}
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 space-y-4 card-hover">
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 space-y-4 card-hover gradient-border-hover">
               <div className="w-14 h-14 rounded-full bg-[#008489]/10 flex items-center justify-center">
                 <Globe className="w-7 h-7 text-[#008489]" />
               </div>
@@ -163,7 +163,7 @@ export default function Home() {
             </div>
 
             {/* Clarity Card */}
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 space-y-4 card-hover">
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 space-y-4 card-hover gradient-border-hover">
               <div className="w-14 h-14 rounded-full bg-[#008489]/10 flex items-center justify-center">
                 <Lightbulb className="w-7 h-7 text-[#008489]" />
               </div>
@@ -176,7 +176,7 @@ export default function Home() {
             </div>
 
             {/* Roadmap Card */}
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 space-y-4 card-hover">
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 space-y-4 card-hover gradient-border-hover">
               <div className="w-14 h-14 rounded-full bg-[#008489]/10 flex items-center justify-center">
                 <ArrowRight className="w-7 h-7 text-[#008489]" />
               </div>
@@ -206,7 +206,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-stretch">
 
             {/* Left Column: Interactive Questions */}
-            <div className="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-8 lg:p-10 space-y-7">
+            <div className="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-8 lg:p-10 space-y-7 gradient-border-hover">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#002D72] flex items-center justify-center">
@@ -240,7 +240,7 @@ export default function Home() {
             </div>
 
             {/* Right Column: Data-Driven Evaluation */}
-            <div className="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-8 lg:p-10 space-y-7">
+            <div className="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-8 lg:p-10 space-y-7 gradient-border-hover">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#008489] flex items-center justify-center">
@@ -295,7 +295,7 @@ export default function Home() {
             {categories.map(({ icon: Icon, name, color }, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center space-y-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow card-hover"
+                className="flex flex-col items-center text-center space-y-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow card-hover gradient-border-hover"
               >
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center"
