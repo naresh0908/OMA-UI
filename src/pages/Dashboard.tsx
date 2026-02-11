@@ -301,7 +301,7 @@ export default function Dashboard() {
           {pulseMetrics.map((metric, index) => {
             const Icon = metric.icon;
             return (
-              <Card key={index} className={`p-6 space-y-4 border-2 hover:shadow-lg transition-shadow card-hover scroll-animate scroll-delay-${(index + 1) * 100}`}>
+              <Card key={index} className={`p-6 space-y-4 border-2 hover:shadow-lg transition-shadow card-hover gradient-border-hover scroll-animate scroll-delay-${(index + 1) * 100}`}>
                 <div className="flex items-start justify-between">
                   <div className="space-y-1">
                     <p className="text-sm text-[#4A4A4A]">{metric.title}</p>
@@ -331,7 +331,7 @@ export default function Dashboard() {
         </div>
 
         {/* Radar Chart */}
-        <Card className="p-8 space-y-6 scroll-animate">
+        <Card className="p-8 space-y-6 scroll-animate gradient-border-hover">
           <div className="space-y-2">
             <h3 className="text-4xl font-light text-[#002D72]">
               Category Performance Analysis
@@ -441,7 +441,7 @@ export default function Dashboard() {
               };
 
               return (
-                <Card key={index} className={`p-6 hover:shadow-lg transition-shadow scroll-animate scroll-delay-${(index + 1) * 100}`}>
+                <Card key={index} className={`p-6 hover:shadow-lg transition-shadow gradient-border-hover scroll-animate scroll-delay-${(index + 1) * 100}`}>
                   {/* Category Name */}
                   <h4 className="text-lg font-medium text-[#002D72] mb-4 px-8">
                     {category.name}
@@ -507,7 +507,7 @@ export default function Dashboard() {
                 {/* Two Elements Side by Side */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {category.elements.map((element, elIndex) => (
-                    <Card key={elIndex} className={`p-6 flex gap-6 hover:shadow-lg transition-shadow scroll-animate-scale scroll-delay-${(elIndex + 1) * 100}`}>
+                    <Card key={elIndex} className={`p-6 flex gap-6 hover:shadow-lg transition-shadow gradient-border-hover scroll-animate-scale scroll-delay-${(elIndex + 1) * 100}`}>
                       {/* Circular Progress Ring */}
                       <div className="flex-shrink-0">
                         <svg width="140" height="140" viewBox="0 0 140 140" className="transform -rotate-90">
@@ -612,7 +612,7 @@ export default function Dashboard() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <Card className="p-6 flex flex-col items-center justify-center bg-white shadow-sm hover:shadow-md transition-shadow card-hover scroll-animate-left">
+            <Card className="p-6 flex flex-col items-center justify-center bg-white shadow-sm hover:shadow-md transition-shadow card-hover gradient-border-hover scroll-animate-left">
               <h4 className="text-xl font-medium mb-4 w-full text-left text-[#002D72]">The HARTS Model</h4>
               <OnionPeel />
             </Card>
@@ -620,7 +620,7 @@ export default function Dashboard() {
               <HappinessChart />
             </div>
             {/* eNPS Score Card */}
-            <Card className="p-6 bg-white shadow-sm hover:shadow-md transition-shadow card-hover scroll-animate-right">
+            <Card className="p-6 bg-white shadow-sm hover:shadow-md transition-shadow card-hover gradient-border-hover scroll-animate-right">
               <h4 className="text-xl font-medium mb-4 text-[#002D72]">Employee Net Promoter Score (eNPS)</h4>
               <div className="flex flex-col items-center">
                 {/* Donut Chart */}
@@ -734,7 +734,7 @@ export default function Dashboard() {
             {criticalGaps.map((gap, index) => (
               <div
                 key={index}
-                className={`rounded-lg p-6 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-6 card-hover scroll-animate scroll-delay-${(index + 1) * 100}`}
+                className={`rounded-lg p-6 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-6 card-hover gradient-border-hover scroll-animate scroll-delay-${(index + 1) * 100}`}
                 style={{ background: 'linear-gradient(90deg, #002D72 0%, #009b7b 100%)' }}
               >
                 <div className="flex-1 space-y-2">
